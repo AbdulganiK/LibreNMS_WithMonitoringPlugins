@@ -42,27 +42,27 @@ services:
       - NET_ADMIN
       - NET_RAW
     ports:
-      - target: 8000
-        published: 8000
-        protocol: tcp
+      - "8000:8000"
     depends_on:
       - db
       - redis
       - msmtpd
     volumes:
       - "./librenms:/data"
+      - "./librenmsdockercron.sh:/opt/librenms/cronscript.sh"
+      - "./import-cron.sh:/etc/cont-init.d/09-import-cron.sh"
     env_file:
       - "./librenms.env"
     environment:
-      - "TZ=${TZ}"
-      - "PUID=${PUID}"
-      - "PGID=${PGID}"
-      - "DB_HOST=db"
-      - "DB_NAME=${MYSQL_DATABASE}"
-      - "DB_USER=${MYSQL_USER}"
-      - "DB_PASSWORD=${MYSQL_PASSWORD}"
-      - "DB_TIMEOUT=60"
-      - "REDIS_HOST=redis"
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - DB_HOST=db
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_USER=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DB_TIMEOUT=60
+      - REDIS_HOST=redis
     restart: always
 
   dispatcher:
