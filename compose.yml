@@ -62,6 +62,7 @@ services:
       - "DB_USER=${MYSQL_USER}"
       - "DB_PASSWORD=${MYSQL_PASSWORD}"
       - "DB_TIMEOUT=60"
+      - "REDIS_HOST=redis"
     restart: always
 
   dispatcher:
@@ -89,6 +90,7 @@ services:
       - "DB_TIMEOUT=60"
       - "DISPATCHER_NODE_ID=dispatcher1"
       - "SIDECAR_DISPATCHER=1"
+      - "REDIS_HOST=redis"
     restart: always
 
   syslogng:
@@ -122,6 +124,7 @@ services:
       - "DB_PASSWORD=${MYSQL_PASSWORD}"
       - "DB_TIMEOUT=60"
       - "SIDECAR_SYSLOGNG=1"
+      - "REDIS_HOST=redis"
     restart: always
 
   snmptrapd:
@@ -155,7 +158,9 @@ services:
       - "DB_PASSWORD=${MYSQL_PASSWORD}"
       - "DB_TIMEOUT=60"
       - "SIDECAR_SNMPTRAPD=1"
+      - "REDIS_HOST=redis"
     restart: always
+  
   scheduler:
     build: .
     container_name: librenms_scheduler
@@ -176,6 +181,7 @@ services:
       - "DB_USER=${MYSQL_USER}"
       - "DB_PASSWORD=${MYSQL_PASSWORD}"
       - "DB_TIMEOUT=60"
-      - "SIDECAR_CRON=1"    
+      - "SIDECAR_CRON=1"
+      - "REDIS_HOST=redis"
     restart: always
 
