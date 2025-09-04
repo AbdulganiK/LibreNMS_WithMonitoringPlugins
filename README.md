@@ -17,6 +17,7 @@ With these plugins, LibreNMS can perform additional service checks (HTTP, Ping, 
   cp librenms.env.example librenms.env
   cp msmtpd.env.example msmtpd.env
   nano librenms.env
+  nano .env
 
 - Build and start the containers
     ```bash
