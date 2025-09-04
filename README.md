@@ -18,7 +18,7 @@ Create and edit environment files
   cp msmtpd.env.example msmtpd.env
   nano librenms.env
 
-  Build and start the containers
+Build and start the containers
     ```bash
     docker compose build
     docker compose up -d
