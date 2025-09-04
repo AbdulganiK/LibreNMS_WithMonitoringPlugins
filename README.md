@@ -12,13 +12,13 @@ With these plugins, LibreNMS can perform additional service checks (HTTP, Ping, 
   git clone https://github.com/AbdulganiK/LibreNMS_WithMonitoringPlugins.git
   cd LibreNMS_WithMonitoringPlugins
 
-Create and edit environment files
+- Create and edit environment files
   ```bash
   cp librenms.env.example librenms.env
   cp msmtpd.env.example msmtpd.env
   nano librenms.env
 
-Build and start the containers
+- Build and start the containers
     ```bash
     docker compose build
     docker compose up -d
