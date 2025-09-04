@@ -24,5 +24,7 @@ With these plugins, LibreNMS can perform additional service checks (HTTP, Ping, 
     ```bash
     docker compose build
     docker compose up -d
-- Login with Standard User Credentials
+- Login with Standard User Credentials. Not given exec into librenms container and add them with
+  ```bash
+  lnms user:add -p yourpassword -r admin yourusername
   
