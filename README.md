@@ -28,3 +28,9 @@ With these plugins, LibreNMS can perform additional service checks (HTTP, Ping, 
   ```bash
   lnms user:add -p yourpassword -r admin yourusername
   
+## Commands for Nagios
+   ```bash
+   echo '*/5 * * * * /opt/librenms/services-wrapper.py 1' > /etc/crontabs/librenms
+   chown librenms:librenms /etc/crontabs/librenms
+   chmod 600 /etc/crontabs/librenms
+
